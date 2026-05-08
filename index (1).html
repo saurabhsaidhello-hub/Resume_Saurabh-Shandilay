@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saurabh Shandilay — Senior Experience Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0C0C0C;--line:#2A2A2A;--text:#F2F0EB;--muted:#666;--dim:#2e2e2e;--accent:#E8E4D9;--green:#4ADE80}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 100px}
+@media(min-width:600px){.wrap{padding:0 40px 100px}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:0.5px solid var(--line);margin-bottom:48px;position:sticky;top:0;background:var(--bg);z-index:10}
+@media(min-width:600px){nav{padding:28px 0;margin-bottom:72px}}
+.nav-name{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+@media(min-width:600px){.nav-name{font-size:12px}}
+.nav-links{display:flex;gap:16px}
+@media(min-width:600px){.nav-links{gap:28px}}
+.nav-link{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;cursor:pointer;transition:color .2s;background:none;border:none;padding:6px 0;touch-action:manipulation}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.hero{margin-bottom:48px}
+@media(min-width:600px){.hero{margin-bottom:80px}}
+.hero-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+@media(min-width:600px){.hero-label{font-size:11px;margin-bottom:20px}}
+.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(44px,12vw,96px);line-height:1.02;color:var(--text);margin-bottom:20px}
+@media(min-width:600px){.hero-name{margin-bottom:28px}}
+.hero-name em{font-style:italic;color:var(--muted)}
+.hero-bio{font-size:15px;line-height:1.85;color:var(--muted);margin-bottom:24px}
+@media(min-width:600px){.hero-bio{font-size:16px;max-width:580px;margin-bottom:32px}}
+.hero-status{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:10px;color:var(--green);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
+@media(min-width:600px){.hero-status{font-size:11px;margin-bottom:28px}}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-links{display:flex;gap:10px;flex-wrap:wrap}
+.pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:8px 14px;border:0.5px solid var(--line);border-radius:40px;color:var(--muted);text-decoration:none;transition:all .2s;touch-action:manipulation}
+@media(min-width:600px){.pill{padding:8px 18px}}
+.pill:hover,.pill:active{border-color:var(--text);color:var(--text)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:0.5px solid var(--line);border-radius:2px;margin-bottom:48px;overflow:hidden}
+@media(min-width:600px){.stats{margin-bottom:64px}}
+.stat{padding:16px 12px;border-right:0.5px solid var(--line)}
+@media(min-width:600px){.stat{padding:24px 20px}}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--text);line-height:1}
+@media(min-width:600px){.stat-num{font-size:40px}}
+.stat-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+@media(min-width:600px){.stat-lbl{font-size:10px;margin-top:8px}}
+.section{display:none}
+.section.active{display:block}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+@media(min-width:600px){.sec-head{gap:16px;margin-bottom:32px}}
+.sec-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:0.5px solid var(--line);padding:5px 10px;border-radius:40px;white-space:nowrap}
+@media(min-width:600px){.sec-tag{font-size:10px;padding:5px 12px}}
+.sec-line{flex:1;height:0.5px;background:var(--line)}
+.about-text{font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:36px}
+@media(min-width:600px){.about-text{font-size:15px;margin-bottom:40px}}
+.about-text strong{color:var(--accent);font-weight:400}
+.skills-list{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;padding:7px 12px;border:0.5px solid var(--dim);border-radius:2px;color:var(--muted);transition:all .2s;cursor:default;touch-action:manipulation}
+@media(min-width:600px){.skill-tag{font-size:10px;padding:7px 14px}}
+.skill-tag:hover,.skill-tag:active{border-color:var(--muted);color:var(--text)}
+.work-item{display:flex;align-items:flex-start;padding:18px 0;border-bottom:0.5px solid var(--line);cursor:pointer;gap:14px;touch-action:manipulation}
+@media(min-width:600px){.work-item{padding:22px 0;gap:20px}}
+.work-item:first-child{border-top:0.5px solid var(--line)}
+.work-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);min-width:24px;padding-top:3px}
+.work-main{flex:1;min-width:0}
+.work-header{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:5px;flex-wrap:wrap}
+.work-title{font-size:15px;color:var(--text);font-weight:400}
+@media(min-width:600px){.work-title{font-size:16px}}
+.work-period{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);white-space:nowrap}
+.work-meta{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media(min-width:600px){.work-meta{font-size:10px}}
+.work-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.wtag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border:0.5px solid var(--dim);border-radius:2px;color:var(--muted)}
+@media(min-width:600px){.wtag{font-size:9px;padding:4px 10px}}
+.work-body{font-size:13px;line-height:1.75;color:var(--muted);display:none;padding-top:12px;border-top:0.5px solid var(--line);margin-top:8px}
+.work-body.open{display:block}
+.proj-section{display:block;font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--text);margin:14px 0 5px}
+@media(min-width:600px){.proj-section{font-size:10px}}
+.proj-section:first-child{margin-top:0}
+.work-arrow{font-family:'DM Mono',monospace;font-size:20px;color:var(--dim);transition:transform .25s,color .2s;flex-shrink:0;line-height:1;user-select:none;padding:4px;margin:-4px}
+.work-item:hover .work-arrow,.work-item.open .work-arrow{color:var(--text)}
+.work-item.open .work-arrow{transform:rotate(45deg)}
+.edu-block{padding:18px 0;border-bottom:0.5px solid var(--line)}
+@media(min-width:600px){.edu-block{padding:22px 0}}
+.edu-block:first-of-type{border-top:0.5px solid var(--line)}
+.edu-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.edu-name{font-size:15px;color:var(--text)}
+@media(min-width:600px){.edu-name{font-size:16px}}
+.edu-year{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)}
+.edu-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+@media(min-width:600px){.edu-sub{font-size:10px}}
+.footer{margin-top:64px;padding-top:24px;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+@media(min-width:600px){.footer{margin-top:80px;padding-top:28px}}
+.footer-name{font-family:'DM Serif Display',serif;font-size:20px;font-style:italic;color:var(--muted)}
+@media(min-width:600px){.footer-name{font-size:22px}}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;padding:4px 0;touch-action:manipulation}
+.footer-link:hover,.footer-link:active{color:var(--text)}
+.footer-copy{font-family:'DM Mono',monospace;font-size:9px;color:var(--dim);margin-top:12px;width:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <span class="nav-name">SS / Portfolio</span>
+    <div class="nav-links">
+      <button class="nav-link active" onclick="showSection('about',this)">Info</button>
+      <button class="nav-link" onclick="showSection('work',this)">Works</button>
+      <button class="nav-link" onclick="showSection('edu',this)">Awards</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">Senior Experience Designer</div>
+    <div class="hero-name">Saurabh<br><em>Shandilay</em></div>
+    <div class="hero-bio">A product designer with 7+ years crafting human-centered experiences across banking, loyalty, EdTech, and FMCG. Helping brands tell their story through thoughtful design and purposeful solutions.</div>
+    <div class="hero-status"><span class="dot"></span>Available for new roles</div>
+    <div class="hero-links">
+      <a class="pill" href="https://saurabhsaidhello-hub.github.io/Service-Design-Gobeyond/" target="_blank">Service Design ↗</a>
+      <a class="pill" href="https://wandering-principles-037793.framer.app/" target="_blank">Galaxy Bank ↗</a>
+      <a class="pill" href="https://www.figma.com/proto/JbSRDLPmfyu9uHMMbJASye/Saurabh-s-Portfolio?node-id=2004-11388&t=TNR9mV5CQYtIAHdk-1" target="_blank">Full Portfolio ↗</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">7+</div><div class="stat-lbl">Years exp.</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Clients</div></div>
+    <div class="stat"><div class="stat-num">6+</div><div class="stat-lbl">Industries</div></div>
+  </div>
+
+  <div id="about" class="section active">
+    <div class="sec-head"><span class="sec-tag">( About me )</span><div class="sec-line"></div></div>
+    <div class="about-text">
+      I craft digital experiences by blending <strong>design thinking</strong> and <strong>human-centered methodology</strong> — building intuitive products for corporate banking, loyalty platforms, e-commerce, and beyond. My approach combines research rigour with creative execution, pushing beyond the ordinary to deliver work that feels both functional and inspiring.<br><br>
+      From fintech startups to global enterprises, I collaborate closely with stakeholders to translate complex workflows into seamless, scalable experiences that leave a lasting impression.
+    </div>
+    <div class="sec-head" style="margin-top:40px"><span class="sec-tag">( What I do )</span><div class="sec-line"></div></div>
+    <div class="skills-list">
+      <span class="skill-tag">Design Thinking</span>
+      <span class="skill-tag">UX Design &amp; Strategy</span>
+      <span class="skill-tag">UI &amp; Visual Design</span>
+      <span class="skill-tag">Service Design</span>
+      <span class="skill-tag">Process Consulting</span>
+      <span class="skill-tag">Usability Testing</span>
+      <span class="skill-tag">Client Workshops</span>
+      <span class="skill-tag">Design Auditing</span>
+      <span class="skill-tag">Pitch Decks</span>
+      <span class="skill-tag">RFP Strategising</span>
+      <span class="skill-tag">Info Architecture</span>
+      <span class="skill-tag">Secondary Research</span>
+    </div>
+  </div>
+
+  <div id="work" class="section">
+    <div class="sec-head"><span class="sec-tag">( Work experience )</span><div class="sec-line"></div></div>
+
+    <div class="work-item" onclick="toggleWork(this)">
+      <div class="work-num">01</div>
+      <div class="work-main">
+        <div class="work-header">
+          <div class="work-title">Senior Experience Designer</div>
+          <div class="work-period">Mar 2025 – Now</div>
+        </div>
+        <div class="work-meta">Publicis Sapient · Abu Dhabi Commercial Bank</div>
+        <div class="work-tags">
+          <span class="wtag">Corporate Banking</span><span class="wtag">Web</span><span class="wtag">Mobile</span><span class="wtag">UX Design</span>
+        </div>
+        <div class="work-body">
+          Revamped the Corporate Salary Transfer (CST Manual) experience across web and mobile. Simplified a complex, error-prone journey reliant on manual data entry — reducing delays in salary processing and support dependency. Designed and optimised user experiences, collaborated with product teams to translate requirements into wireframes, and applied design system principles for consistency and scalability.
+        </div>
+      </div>
+      <div class="work-arrow">+</div>
+    </div>
+
+    <div class="work-item" onclick="toggleWork(this)">
+      <div class="work-num">02</div>
+      <div class="work-main">
+        <div class="work-header">
+          <div class="work-title">Senior Experience Designer</div>
+          <div class="work-period">May 2022 – Feb 2025</div>
+        </div>
+        <div class="work-meta">Concentrix · Multi-client</div>
+        <div class="work-tags">
+          <span class="wtag">Fintech</span><span class="wtag">Loyalty</span><span class="wtag">FMCG</span><span class="wtag">EdTech</span><span class="wtag">Paints</span><span class="wtag">E-commerce</span>
+        </div>
+        <div class="work-body">
+          Worked across Fintech, EdTech, Creative Networking, Paints, E-commerce, Loyalty, and FMCG with clients like Woolworths, Nestlé, HDFC, IBDIC, ICICI, Axis Bank, Birla Opus, CaratLane, Openvy, and SiriusXM.
+          <span class="proj-section">Go Beyond — Service Design</span>
+          Mapped the end-to-end Progress Drawdown Loan Processing service journey. Conducted stakeholder interviews, cross-functional workshops. Created service blueprints, customer journeys, ecosystem maps, and workflow diagrams.
+          <span class="proj-section">Birla Opus — Color Visualiser (Web &amp; App)</span>
+          Designed a multi-persona colour visualiser for consumers, painters, contractors, architects, interior designers, and colour consultants. Enabled informed colour decisions through realistic lighting previews.
+          <span class="proj-section">Woolworths — Loyalty Experience</span>
+          Designed a tiered loyalty app — tier progression tracking, rewards discovery, offer redemption, and loyalty dashboard. Co-defined loyalty framework with PMs and aligned business goals with user behaviour insights.
+          <span class="proj-section">Nestlé — Outside-In CX Audit</span>
+          Led an outside-in CX audit. Immersed in the customer journey as an end user to uncover real-world pain points and usability gaps. Translated insights into user-centric solutions with stakeholders.
+          <span class="proj-section">HDFC — Trade Flow Navigation Redesign</span>
+          Redesigned the right navigation panel for HDFC Trade Flow. Conducted heuristic evaluations and journey mapping to uncover usability issues, redundant steps, and cognitive overload.
+          <span class="proj-section">IBDIC — Letter of Credit Journey</span>
+          Led end-to-end UX for the LC module — creation, amendment, approval, tracking, and document handling. Reduced cognitive load through structured forms, guided workflows, and smart validations.
+          <span class="proj-section">ICICI Bank — UX Audit &amp; Remittance Journey</span>
+          Conducted a UX audit and designed the remittance request journey, identifying pain points and improving the overall flow.
+          <span class="proj-section">Axis Bank — Mobile &amp; Web Banking</span>
+          Designed mobile and web banking application experiences, enhancing usability and interaction patterns.
+          <span class="proj-section">CaratLane — Front-end App</span>
+          Enhanced the front-end app experience focusing on product discovery and purchase flows.
+          <span class="proj-section">SiriusXM — Navigation Journey</span>
+          Refined the navigation journey, improving content discoverability and reducing user drop-off.
+          <span class="proj-section">Openvy — Product Experience</span>
+          Built end-to-end product experiences for Openvy, a creative networking platform.
+        </div>
+      </div>
+      <div class="work-arrow">+</div>
+    </div>
+  </div>
+
+  <div id="edu" class="section">
+    <div class="sec-head"><span class="sec-tag">( Education )</span><div class="sec-line"></div></div>
+    <div class="edu-block">
+      <div class="edu-row">
+        <div class="edu-name">Bachelor of Design</div>
+        <div class="edu-year">2015 – 2019</div>
+      </div>
+      <div class="edu-sub">Fashion Communication · NIFT</div>
+    </div>
+    <div class="sec-head" style="margin-top:40px"><span class="sec-tag">( Awards )</span><div class="sec-line"></div></div>
+    <div class="edu-block">
+      <div class="edu-row">
+        <div class="edu-name">◈ Most Innovative Graduation Project</div>
+        <div class="edu-year">2019</div>
+      </div>
+      <div class="edu-sub">NIFT · Graduation Award</div>
+    </div>
+    <div class="edu-block">
+      <div class="edu-row">
+        <div class="edu-name">◈ Client Appreciation</div>
+        <div class="edu-year">2024</div>
+      </div>
+      <div class="edu-sub">Concentrix</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">Saurabh Shandilay</div>
+    <div class="footer-links">
+      <a class="footer-link" href="https://saurabhsaidhello-hub.github.io/Service-Design-Gobeyond/" target="_blank">Portfolio ↗</a>
+      <a class="footer-link" href="https://www.figma.com/proto/JbSRDLPmfyu9uHMMbJASye/Saurabh-s-Portfolio?node-id=2004-11388" target="_blank">Figma ↗</a>
+    </div>
+    <div class="footer-copy">© 2025 Saurabh Shandilay. All rights reserved.</div>
+  </div>
+
+</div>
+<script>
+function showSection(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleWork(item){
+  const body=item.querySelector('.work-body');
+  const arrow=item.querySelector('.work-arrow');
+  const open=body.classList.toggle('open');
+  item.classList.toggle('open',open);
+  arrow.textContent=open?'−':'+';
+}
+</script>
+</body>
+</html>
